@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Serialization</title><link rel="shortcut icon" href="/images/avatar.png"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script></head><body><nav class="main-nav"><a href="/">Home</a><a href="/about">About Me</a><a href="/tags">Tags</a></nav><div class="profile"><section id="wrapper"><header id="header"><a href="/about"><img class="2x" id="avatar" src="/images/avatar.png"></a><h1>Olive X</h1><h2></h2></header></section></div><section class="post" id="wrapper"><article><header><h1>Serialization</h1><h2 class="headline">Jun 10, 2019 06:41<!--|·--><!--|#{wordcount(page.content)} words--><!--|·--><!--|#{min2read(page.content)} minutes read--></h2></header><div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#序列化的作用是-可以显示变量-类-结构等-在inspector（检视面板）上"><span class="toc-text">序列化的作用是: 可以显示变量(类,结构等)在inspector（检视面板）上</span></a></li></ol></div><section id="post-body"><h1 id="序列化的作用是-可以显示变量-类-结构等-在inspector（检视面板）上"><a href="#序列化的作用是-可以显示变量-类-结构等-在inspector（检视面板）上" class="headerlink" title="序列化的作用是: 可以显示变量(类,结构等)在inspector（检视面板）上"></a>序列化的作用是: 可以显示变量(类,结构等)在inspector（检视面板）上</h1><p>当你在inspector上操作数据的时候,Unity就会把这些数据序列化为文件,当游戏在运行的时候,Unity会反序列化这些文件来赋值给运行的对象,类似别的编程中通过构造函数初始化对象效果是一样的</p>
+<p>序列化是指将对象实例的状态存储到存储媒体的过程。在此过程中，先将对象的公共字段和私有字段以及类的名称（包括类所在的程序集）转换为字节流，然后再把字节流写入数据流。在随后对对象进行反序列化时，将创建出与原对象完全相同的副本。</p>
+<p>Unity触发序列化的时候不仅仅是在inspector上修改数据,还有在 继承了MonoBehaviour的游戏对象通过克隆instantiate()方法的时候，它也会反序列化和序列化.</p>
+<p>Serializable: 用于 自定义的，非 abstract 的类. 结构体等 , 使这类型也能序列化</p>
+<p>SerializeField: 用于 非public 类型(如private),  使非public 类型也能序列化</p>
+<p>脚本的字段需要满足什么条件才能被序列化？（必须同时满足）</p>
+<ol>
+<li><p>public 类型，或者有 [SerializeField]</p>
+</li>
+<li><p>不是 static</p>
+</li>
+<li><p>不是 const</p>
+</li>
+<li><p>不是 readonly</p>
+</li>
+<li><p>类型必须是 Unity 可以序列化的类型</p>
+</li>
+</ol>
+</section><div class="tags"><a href="/tags/Unity/">Unity</a></div><nav id="post-nav"><span class="prev"><a href="/2019/06/10/Optimizing-and-Profiling/"><span class="arrow">←</span>Newer Posts</a></span><span class="next"><a href="/2019/06/10/OOP-vs-ECS/">Older Posts<span class="arrow">→</span></a></span></nav></article></section><footer id="footer"><div id="social"><a class="symbol" href="https://github.com/Olivexicklop"><i class="fa fa-github"></i></a></div><p class="small">© Copyright 2019 &nbsp;<a href="https://github.com/ffinnocean"> <i class="fa fa-heart" aria-hidden="true">&nbsp; KK &nbsp;</i></a></p><p class="small">Powered by &nbsp;<a href="https://hexo.io/">Hexo &nbsp;</a><!--Theme By &nbsp;--><!--a(href='https://github.com/fuzhouxxdong/hexo-theme-dxx') Dxx--></p></footer><script>hljs.initHighlightingOnLoad();</script></body></html>
